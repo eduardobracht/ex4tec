@@ -35,12 +35,7 @@ public class InstrumentoDAODTOderby implements InstrumentoDAO {
         }
     return list;
     }
-    
-    @Override
-    public InstrumentoDTO buscarPorPID(int pid) throws Exception{
-    return null;
-    }
-    
+
     @Override
     public void inserir(InstrumentoDTO instrumento) throws Exception{
     try (Connection conexao = StartDBDataSource.conectarBd()) {
@@ -63,6 +58,12 @@ public class InstrumentoDAODTOderby implements InstrumentoDAO {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+    
+    //Metodos não implementados
+    @Override
+    public InstrumentoDTO buscarPorPID(int pid) throws Exception{
+    return null;
     }
     
     @Override

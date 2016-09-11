@@ -1,5 +1,7 @@
 package madeinbrazil;
 
+import java.util.List;
+
 /**
  *
  * @author Daniel Machado
@@ -35,8 +37,12 @@ public class main {
         
         //Listando todos instrumentos
         try{
-        System.out.println("pid tipo modelo cor marca preco");
-        System.out.println(dao.buscarTodos().get(0).toString());
+            List<InstrumentoDTO> list = dao.buscarTodos();
+            System.out.println("PID TIPO     MODELO      COR     MARCA   PRECO");
+            for(InstrumentoDTO instrumento: list){
+                System.out.println(instrumento.toString());
+            }
+            
         }
         catch(Exception e){
         System.out.println(e.getMessage());

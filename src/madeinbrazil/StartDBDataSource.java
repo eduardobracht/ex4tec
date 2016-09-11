@@ -33,7 +33,7 @@ public class StartDBDataSource {
     
     public static void criarBd() throws Exception {
         try (Connection conexao = criarDataSource().getConnection()) {
-            //Criar uma tabela
+            //Criando tabela
             String sql = 
                     "create table INSTRUMENTOS("+
                     "PID varchar(3) not null,"+
