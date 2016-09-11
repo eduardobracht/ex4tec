@@ -44,15 +44,16 @@ public class InstrumentoDAODTOderby implements InstrumentoDAO {
     @Override
     public void inserir(InstrumentoDTO instrumento) throws Exception{
     try (Connection conexao = StartDBDataSource.conectarBd()) {
-            //Inserir dados na tabela
             String sql = "insert into INSTRUMENTOS(PID,TIPO,MODELO,COR,MARCA,PRECO) values (?,?,?,?,?,?)";
             try (PreparedStatement comando = conexao.prepareStatement(sql)) {
-                comando.setString(1,"001");
-                comando.setString(2,"GUITARRA");
-                comando.setString(3,"SG SPECIAL FADED WORN CHERRY");
-                comando.setString(4,"VINHO (WORN CHERRY) (WC)");
-                comando.setString(5,"GIBSON");
-                comando.setDouble(6,5599.00);
+                
+                comando.setString(1,instrumento.getPid());
+                comando.setString(2,instrumento.getTipo());
+                comando.setString(3,instrumento.getModelo());
+                comando.setString(4,instrumento.getCor());
+                comando.setString(5,instrumento.getMarca());
+                comando.setDouble(6,instrumento.getPreco());
+                
                 if (comando.executeUpdate() > 0) {
                     System.out.println("Inserção efetuada com sucesso");
                 } else {
