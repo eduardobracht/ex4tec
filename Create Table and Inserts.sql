@@ -18,7 +18,6 @@ drop table INSTRUMENTOS;
 
 select * from INSTRUMENTOS;
 
-
 /*
 TIPO        MODELO                          COR                         MARCA	  PRECO
 GUITARRA    SG SPECIAL FADED WORN CHERRY    VINHO (WORN CHERRY) (WC)	  GIBSON	5599,00
